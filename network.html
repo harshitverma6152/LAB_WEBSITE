@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collaboration Network — DVDLab</title>
+    <meta name="description"
+        content="Global collaboration network of the Drug and Vaccine Development Laboratory, GLA University.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav id="navbar">
+        <div class="nav-content">
+            <div class="logo">
+                <img src="images/gla_logo.png" alt="GLA University Logo" class="nav-logo-img">
+                <i class="fa-solid fa-flask-vial"></i> DVD<span class="highlight">Lab</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="pi.html">PI</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="network.html">Network</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="career.html">Career</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Banner -->
+    <div class="page-banner page-banner--network">
+        <div class="page-banner-content reveal">
+            <span class="page-label"><i class="fa-solid fa-network-wired"></i> Collaboration Ecosystem</span>
+            <h1>Global Research Network</h1>
+            <p>A connected ecosystem of institutions driving integrated biomedical solutions</p>
+        </div>
+        <div class="banner-shape"></div>
+    </div>
+
+    <!-- Network Graph -->
+    <section class="section-container">
+        <div class="section-header reveal">
+            <h2>Collaboration Network</h2>
+            <p>Drag nodes to explore connections. Dashed lines indicate international collaborations.</p>
+        </div>
+        <div class="network-wrapper reveal">
+            <div id="collaboration-network"></div>
+            <div class="network-legend">
+                <div class="legend-item"><span class="node-color lab-node"></span> DVD Lab (Hub)</div>
+                <div class="legend-item"><span class="node-color collab-node"></span> Collaborating Institution</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collaborator Cards -->
+    <section class="section-container bg-light-section">
+        <div class="section-header reveal">
+            <h2>Our Collaborators</h2>
+            <p>Institutions working alongside DVDLab</p>
+        </div>
+        <div class="collab-grid">
+            <div class="collab-card reveal">
+                <div class="collab-icon"><i class="fa-solid fa-hospital"></i></div>
+                <h4>AIIMS, New Delhi</h4>
+                <p>All India Institute of Medical Sciences — collaboration on clinical sample analysis and disease
+                    diagnostics.</p>
+                <span class="collab-tag">National</span>
+            </div>
+            <div class="collab-card reveal">
+                <div class="collab-icon"><i class="fa-solid fa-microscope"></i></div>
+                <h4>ICMR NJIL &amp; OMD, Agra</h4>
+                <p>Indian Council of Medical Research — National JALMA Institute for Leprosy and Other Mycobacterial
+                    Diseases.</p>
+                <span class="collab-tag">National</span>
+            </div>
+            <div class="collab-card reveal">
+                <div class="collab-icon"><i class="fa-solid fa-virus"></i></div>
+                <h4>ICMR RMRC, Gorakhpur</h4>
+                <p>Regional Medical Research Centre — partnering on regional zoonotic disease surveillance and response.
+                </p>
+                <span class="collab-tag">National</span>
+            </div>
+            <div class="collab-card reveal">
+                <div class="collab-icon"><i class="fa-solid fa-stethoscope"></i></div>
+                <h4>BRD Medical College, Gorakhpur</h4>
+                <p>Collaboration on clinical data access, patient recruitment, and translational research validation.
+                </p>
+                <span class="collab-tag">National</span>
+            </div>
+            <div class="collab-card reveal">
+                <div class="collab-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                <h4>Chandigarh University</h4>
+                <p>Academic partnership for biotechnology research, student exchange, and joint publication initiatives.
+                </p>
+                <span class="collab-tag">Academic</span>
+            </div>
+            <div class="collab-card reveal">
+                <div class="collab-icon"><i class="fa-solid fa-globe"></i></div>
+                <h4>Ben-Gurion University, Israel</h4>
+                <p>International collaboration in biochemistry and infectious disease research; prior post-doctoral
+                    engagement of PI.</p>
+                <span class="collab-tag international-tag">International</span>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="logo"><i class="fa-solid fa-flask-vial"></i> DVD<span class="highlight">Lab</span></div>
+                <p>GLA University, Mathura</p>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="pi.html">PI</a>
+                <a href="research.html">Research</a>
+                <a href="team.html">Team</a>
+                <a href="career.html">Career</a>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Drug and Vaccine Development Laboratory. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research — DVDLab</title>
+    <meta name="description"
+        content="Ongoing research projects at the Drug and Vaccine Development Laboratory — GLA University.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav id="navbar">
+        <div class="nav-content">
+            <div class="logo">
+                <img src="images/gla_logo.png" alt="GLA University Logo" class="nav-logo-img">
+                <i class="fa-solid fa-flask-vial"></i> DVD<span class="highlight">Lab</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="pi.html">PI</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="network.html">Network</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="career.html">Career</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Banner -->
+    <div class="page-banner page-banner--research">
+        <div class="page-banner-content reveal">
+            <span class="page-label"><i class="fa-solid fa-flask"></i> Research Intelligence Center</span>
+            <h1>Our Research Projects</h1>
+            <p>Advancing translational science in infectious diseases and vaccine development</p>
+        </div>
+        <div class="banner-shape"></div>
+    </div>
+
+    <section class="section-container">
+        <div class="section-header reveal">
+            <h2>Active Projects</h2>
+            <p>Click any card to reveal full project details</p>
+        </div>
+
+        <!-- Filters -->
+        <div class="filters-container reveal" id="project-filters">
+            <button class="filter-btn active" data-filter="all"><i class="fa-solid fa-border-all"></i> All
+                Projects</button>
+            <button class="filter-btn" data-filter="Zoonotic"><i class="fa-solid fa-paw"></i> Zoonotic</button>
+            <button class="filter-btn" data-filter="Vaccine"><i class="fa-solid fa-syringe"></i> Vaccines</button>
+            <button class="filter-btn" data-filter="Diagnostic"><i class="fa-solid fa-vial-circle-check"></i>
+                Diagnostics</button>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="projects-grid" id="projects-container">
+            <!-- Populated by JS -->
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="logo"><i class="fa-solid fa-flask-vial"></i> DVD<span class="highlight">Lab</span></div>
+                <p>GLA University, Mathura</p>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="pi.html">PI</a>
+                <a href="network.html">Network</a>
+                <a href="team.html">Team</a>
+                <a href="career.html">Career</a>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Drug and Vaccine Development Laboratory. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
