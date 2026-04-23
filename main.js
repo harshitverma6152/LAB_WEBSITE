@@ -366,6 +366,16 @@ function initPI() {
         });
     });
 
+    // Render Career Timeline on PI page
+    const piTimeline = document.getElementById('pi-timeline-container');
+    if (piTimeline) {
+        piTimeline.innerHTML = careerSummary.map(item => `
+            <div class="timeline-item reveal">
+                <div class="timeline-date">${item.period}</div>
+                <div class="timeline-content"><h4>${item.role}</h4><p class="text-muted">${item.inst}</p></div>
+            </div>`).join('');
+    }
+
     initScrollReveal();
     initTilt('.pi-profile');
 }
@@ -506,18 +516,7 @@ function initTeam() {
 // =============================================
 
 function initCareer() {
-    // Roles & Awards are shown exclusively on pi.html (Achievements tabs)
-    const tContainer = document.getElementById('timeline-container');
-    if (!tContainer) return;
-
-    careerSummary.forEach(item => {
-        tContainer.innerHTML += `
-            <div class="timeline-item reveal">
-                <div class="timeline-date">${item.period}</div>
-                <div class="timeline-content"><h4>${item.role}</h4><p class="text-muted">${item.inst}</p></div>
-            </div>`;
-    });
-
+    // Career timeline is now shown on pi.html — nothing to render here
     initScrollReveal();
 }
 
