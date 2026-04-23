@@ -43,7 +43,8 @@ const scholars = [
     { name: "Ms Sakshi Singh", degree: "M.Sc. Applied Microbiology and Biotechnology", interest: "Cancer Biology", photo: "images/sakshi_singh.jpg" },
     { name: "Mrs Manjeet Kaur", degree: "M.Sc. Biotechnology", interest: "Environmental Toxicology", photo: "images/swarnima_paliwal.jpg", photoStyle: "object-position: center top;" },
     { name: "Ms. Shruti Khandelwal", degree: "M.Sc. Microbiology", interest: "Bioremediation of PAHs", photo: "images/shruti_khandelwal.jpg" },
-    { name: "Mr. Ayush Kulshreshtha", degree: "M.Sc. Microbiology", interest: "Infectious Diseases", photo: "images/ayush_kulshreshtha.jpg" }
+    { name: "Mr. Ayush Kulshreshtha", degree: "M.Sc. Microbiology", interest: "Infectious Diseases", photo: "images/ayush_kulshreshtha.jpg" },
+    { name: "Mr. Mridul Raghuvanshi", degree: "Junior Research Assistant", interest: "Biomedical Research", photo: "images/mridul_raghuvanshi.jpg" }
 ];
 
 const alumni = [
