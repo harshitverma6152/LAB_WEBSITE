@@ -1353,3 +1353,399 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+
+/* ============================================
+   THE LAB PAGE
+   ============================================ */
+
+/* Banner */
+.page-banner--lab {
+    background: linear-gradient(135deg, #001a12 0%, #004d40 50%, #00695c 100%);
+    overflow: hidden;
+    position: relative;
+}
+
+.lab-title-glow {
+    color: var(--secondary);
+    text-shadow: 0 0 40px rgba(255, 202, 40, 0.6), 0 0 80px rgba(255, 202, 40, 0.3);
+    animation: titlePulse 3s ease-in-out infinite;
+}
+
+@keyframes titlePulse {
+    0%, 100% { text-shadow: 0 0 40px rgba(255,202,40,0.6), 0 0 80px rgba(255,202,40,0.3); }
+    50%       { text-shadow: 0 0 60px rgba(255,202,40,0.9), 0 0 120px rgba(255,202,40,0.5); }
+}
+
+/* DNA strand animation in banner */
+.lab-dna-animation {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+.dna-strand {
+    position: absolute;
+    width: 3px;
+    border-radius: 2px;
+    animation: dnaFloat 8s ease-in-out infinite;
+    background: linear-gradient(to bottom, transparent, rgba(0,137,123,0.4), rgba(255,202,40,0.3), transparent);
+}
+.dna-strand:nth-child(1) { left: 10%; height: 60%; top: 20%; animation-delay: 0s; }
+.dna-strand:nth-child(2) { left: 85%; height: 80%; top: 10%; animation-delay: -3s; }
+.dna-strand:nth-child(3) { left: 55%; height: 50%; top: 30%; animation-delay: -5s; }
+
+@keyframes dnaFloat {
+    0%, 100% { transform: translateY(0) scaleX(1); opacity: 0.4; }
+    33%       { transform: translateY(-20px) scaleX(3); opacity: 0.8; }
+    66%       { transform: translateY(10px) scaleX(1.5); opacity: 0.6; }
+}
+
+/* Lab Stats Bar */
+.lab-stats-bar {
+    background: linear-gradient(90deg, #001a12 0%, #004d40 50%, #001a12 100%);
+    padding: 2.5rem 2rem;
+    border-bottom: 2px solid rgba(255,202,40,0.3);
+}
+.lab-stats-bar .stat-num {
+    font-size: 2.8rem;
+    color: var(--secondary);
+    text-shadow: 0 0 20px rgba(255,202,40,0.4);
+}
+
+/* About Grid */
+.lab-about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+}
+.lab-about-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: rgba(0,137,123,0.1);
+    color: var(--primary-light);
+    border: 1px solid rgba(0,137,123,0.25);
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    margin-bottom: 1.2rem;
+}
+.lab-about-text h3 {
+    font-size: 1.9rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+.lab-about-text p {
+    color: var(--text-muted);
+    line-height: 1.75;
+}
+.lab-highlights {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem;
+    margin-top: 1.8rem;
+}
+.lab-highlight-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: var(--bg-light);
+    padding: 0.75rem 1rem;
+    border-radius: 10px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--primary);
+    border-left: 3px solid var(--primary-light);
+    transition: var(--transition);
+}
+.lab-highlight-item:hover {
+    background: rgba(0,137,123,0.08);
+    transform: translateX(4px);
+}
+.lab-highlight-item i { color: var(--primary-light); font-size: 1rem; }
+
+/* Molecule Ring Animation */
+.lab-about-visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+.lab-molecule-ring {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.molecule-center {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 40px rgba(0,137,123,0.5), 0 0 80px rgba(0,137,123,0.2);
+    z-index: 2;
+    animation: moleculePulse 3s ease-in-out infinite;
+}
+.molecule-center i { color: var(--secondary); font-size: 2rem; }
+
+@keyframes moleculePulse {
+    0%, 100% { box-shadow: 0 0 40px rgba(0,137,123,0.5); transform: scale(1); }
+    50%       { box-shadow: 0 0 70px rgba(0,137,123,0.8), 0 0 120px rgba(0,137,123,0.3); transform: scale(1.05); }
+}
+
+.orbit {
+    position: absolute;
+    border-radius: 50%;
+    border: 1.5px dashed rgba(0,137,123,0.35);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+.orbit-1 { width: 160px; height: 160px; animation: orbitSpin 6s linear infinite; }
+.orbit-2 { width: 220px; height: 220px; animation: orbitSpin 10s linear infinite reverse; }
+.orbit-3 { width: 290px; height: 290px; animation: orbitSpin 14s linear infinite; }
+
+@keyframes orbitSpin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+.atom {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--secondary), #f59e0b);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -19px;
+    box-shadow: 0 4px 15px rgba(255,202,40,0.4);
+}
+.atom i { color: var(--primary); font-size: 0.85rem; }
+.atom-1 { animation: counterSpin 6s linear infinite reverse; }
+.atom-2 { animation: counterSpin 10s linear infinite; }
+.atom-3 { animation: counterSpin 14s linear infinite reverse; }
+@keyframes counterSpin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+/* ---- GALLERY ---- */
+.lab-gallery-section {
+    background: linear-gradient(180deg, #f4f6f8 0%, #e8f5f3 100%);
+    padding-bottom: 5rem;
+}
+.lab-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto;
+    gap: 16px;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 2rem 2rem;
+}
+.lab-photo-card {
+    position: relative;
+    border-radius: 18px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 8px 32px rgba(0,77,64,0.12);
+    transition: transform 0.4s cubic-bezier(.2,0,.1,1), box-shadow 0.4s ease;
+    transform-style: preserve-3d;
+    grid-column: span 6;
+    min-height: 380px;
+}
+
+.lab-photo-card:hover {
+    transform: perspective(1000px) rotateY(-4deg) rotateX(3deg) translateY(-10px) scale(1.02);
+    box-shadow: 0 24px 60px rgba(0,77,64,0.22), 0 0 0 2px rgba(255,202,40,0.4);
+    z-index: 5;
+}
+.lab-photo-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: transform 0.6s ease;
+}
+.lab-photo-card:hover img { transform: scale(1.06); }
+
+.lab-photo-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,30,20,0.88) 0%, rgba(0,30,20,0.2) 50%, transparent 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 1.5rem;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+.lab-photo-card:hover .lab-photo-overlay {
+    opacity: 1;
+    transform: translateY(0);
+}
+.lab-photo-overlay .photo-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: rgba(255,202,40,0.2);
+    border: 1px solid rgba(255,202,40,0.5);
+    color: var(--secondary);
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+    margin-bottom: 0.5rem;
+    width: fit-content;
+}
+.lab-photo-overlay h4 {
+    color: #ffffff;
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+}
+.lab-photo-overlay p {
+    color: rgba(255,255,255,0.75);
+    font-size: 0.82rem;
+    line-height: 1.4;
+}
+
+/* ---- RESEARCH PILLARS (dark section) ---- */
+.bg-lab-dark {
+    background: linear-gradient(135deg, #001a12 0%, #003329 100%);
+    padding: 5rem 2rem;
+}
+.bg-lab-dark .section-header h2 { color: #ffffff; }
+.bg-lab-dark .section-header p { color: rgba(255,255,255,0.65); }
+.text-white-h2 { color: #ffffff !important; }
+.text-white-h2::after { background: var(--secondary) !important; }
+
+.lab-pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.lab-pillar-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(0,137,123,0.25);
+    border-radius: 16px;
+    padding: 2rem 1.6rem;
+    backdrop-filter: blur(10px);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+.lab-pillar-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-light), var(--secondary));
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+    transform-origin: left;
+}
+.lab-pillar-card:hover::before { transform: scaleX(1); }
+.lab-pillar-card:hover {
+    background: rgba(0,137,123,0.12);
+    border-color: rgba(0,137,123,0.5);
+    transform: perspective(800px) rotateX(-4deg) translateY(-8px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.4), 0 0 40px rgba(0,137,123,0.15);
+}
+.pillar-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, rgba(0,137,123,0.3), rgba(0,77,64,0.5));
+    border: 1px solid rgba(0,137,123,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.2rem;
+    transition: var(--transition);
+}
+.lab-pillar-card:hover .pillar-icon {
+    background: linear-gradient(135deg, var(--primary-light), var(--primary));
+    box-shadow: 0 0 20px rgba(0,137,123,0.5);
+}
+.pillar-icon i { color: var(--secondary); font-size: 1.5rem; }
+.lab-pillar-card h4 { color: #ffffff; font-size: 1.05rem; margin-bottom: 0.6rem; }
+.lab-pillar-card p { color: rgba(255,255,255,0.6); font-size: 0.88rem; line-height: 1.6; }
+
+/* ---- CAPABILITIES ---- */
+.lab-capabilities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.8rem;
+}
+.lab-cap-card {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 2rem 1.6rem;
+    box-shadow: var(--card-shadow);
+    border: 1px solid rgba(0,77,64,0.06);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transform-style: preserve-3d;
+    cursor: default;
+}
+.lab-cap-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(0,137,123,0.04), rgba(255,202,40,0.03));
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+.lab-cap-card:hover {
+    transform: perspective(900px) rotateY(-6deg) rotateX(4deg) translateY(-8px);
+    box-shadow: 0 20px 50px rgba(0,77,64,0.15), 4px 4px 0 rgba(255,202,40,0.3);
+    border-color: rgba(0,137,123,0.2);
+}
+.lab-cap-card:hover::after { opacity: 1; }
+
+.cap-icon-wrap {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.2rem;
+    box-shadow: 0 6px 20px rgba(0,77,64,0.25);
+}
+.cap-icon-wrap i { color: var(--secondary); font-size: 1.4rem; }
+.lab-cap-card h4 { color: var(--primary); font-size: 1rem; margin-bottom: 0.5rem; }
+.lab-cap-card p { color: var(--text-muted); font-size: 0.87rem; line-height: 1.55; }
+.cap-number {
+    position: absolute;
+    top: 1.2rem; right: 1.4rem;
+    font-size: 3rem;
+    font-weight: 900;
+    color: rgba(0,77,64,0.05);
+    line-height: 1;
+}
+
+/* Responsive */
+@media(max-width:1000px) {
+    .lab-about-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .lab-about-visual { display: none; }
+    .lab-photo-card:nth-child(1) { grid-column: span 12; }
+    .lab-photo-card:nth-child(2) { grid-column: span 12; }
+    .lab-photo-card:nth-child(3),
+    .lab-photo-card:nth-child(4),
+    .lab-photo-card:nth-child(5) { grid-column: span 12; }
+}
+@media(max-width:600px) {
+    .lab-highlights { grid-template-columns: 1fr; }
+    .lab-gallery-grid { grid-template-columns: 1fr; padding: 0 1rem; }
+}

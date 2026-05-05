@@ -44,7 +44,8 @@ const scholars = [
     { name: "Mrs Manjeet Kaur", degree: "M.Sc. Biotechnology", interest: "Environmental Toxicology", photo: "images/swarnima_paliwal.jpg", photoStyle: "object-position: center top;" },
     { name: "Ms. Shruti Khandelwal", degree: "M.Sc. Microbiology", interest: "Bioremediation of PAHs", photo: "images/shruti_khandelwal.jpg" },
     { name: "Mr. Ayush Kulshreshtha", degree: "M.Sc. Microbiology", interest: "Infectious Diseases", photo: "images/ayush_kulshreshtha.jpg" },
-    { name: "Mr. Mridul Raghuvanshi", degree: "Junior Research Assistant", interest: "Biomedical Research", photo: "images/mridul_raghuvanshi.jpg" }
+    { name: "Mr. Mridul Raghuvanshi", degree: "Junior Research Assistant", interest: "Biomedical Research", photo: "images/mridul_raghuvanshi.jpg" },
+    { name: "Mrs. Kashis", degree: "Ph.D. Scholar", interest: "Cancer Drug Discovery", photo: "images/kashis.jpg", photoStyle: "object-position: center 15%;" }
 ];
 
 const alumni = [
@@ -513,6 +514,110 @@ function initTeam() {
 }
 
 // =============================================
+//  PAGE: THE LAB (lab.html)
+// =============================================
+
+const labPhotos = [
+    {
+        src: "images/lab_pi_office.jpg",
+        tag: "PI Cabin",
+        title: "The Principal Investigator's Office",
+        desc: "Where strategy meets science — Dr. Pandey's dedicated workspace overlooking the lab floor, driving research vision and mentoring scholars."
+    },
+    {
+        src: "images/lab_entrance.jpg",
+        tag: "Lab Space",
+        title: "The Research Laboratory",
+        desc: "A biosafety-compliant, glass-partitioned lab room — clean, organised, and purpose-built for precision experimental work."
+    },
+    {
+        src: "images/lab_bench_work.jpg",
+        tag: "Wet Lab",
+        title: "Bench-Top Experiments",
+        desc: "A scholar in full PPE performing meticulous liquid-handling procedures — the daily backbone of drug and vaccine research."
+    },
+    {
+        src: "images/lab_data_analysis.jpg",
+        tag: "Computational",
+        title: "Data Analysis & Bioinformatics",
+        desc: "Researchers collaborating on computational tools and literature, bridging experimental results with scientific insights."
+    },
+    {
+        src: "images/lab_discussion_glass.jpg",
+        tag: "Mentorship",
+        title: "Guided Research Discussions",
+        desc: "One-on-one mentorship sessions — knowledge exchange and problem-solving at the heart of the DVDLab culture."
+    },
+    {
+        src: "images/lab_biosafety_cabinet.jpg",
+        tag: "Biocontainment",
+        title: "Biosafety Operations",
+        desc: "Working within Class II Type A2 biosafety cabinets to ensure sterile conditions and researcher safety during microbial handling."
+    },
+    {
+        src: "images/lab_centrifuge.jpg",
+        tag: "Instrumentation",
+        title: "High-Speed Separation",
+        desc: "Utilising advanced centrifugation for precise separation of cellular components and molecular isolates."
+    },
+    {
+        src: "images/lab_pipetting.jpg",
+        tag: "Wet Lab",
+        title: "Precision Micropipetting",
+        desc: "The art of accurate volume measurement — a critical skill in preparing reactions for vaccine and drug development."
+    },
+    {
+        src: "images/lab_researcher_bench2.jpg",
+        tag: "Bench Work",
+        title: "Active Research Bench",
+        desc: "A glimpse into the active experimental setups where new hypotheses are tested and validated daily."
+    },
+    {
+        src: "images/lab_restricted_area.jpg",
+        tag: "Safety",
+        title: "Controlled Access Zone",
+        desc: "Maintaining strict biosafety protocols and restricted access to ensure the integrity of sensitive research experiments."
+    },
+    {
+        src: "images/lab_door_sign.jpg",
+        tag: "Facility",
+        title: "P410 — Drug & Vaccine Development Laboratory",
+        desc: "The iconic green signboard marking Room P410 — home to the Drug & Vaccine Development Laboratory at GLA University, Mathura."
+    },
+    {
+        src: "images/lab_team_entrance.jpg",
+        tag: "Our Team",
+        title: "DVDLab Research Team",
+        desc: "Dr. Swaroop K. Pandey, Ph.D. alongside our dedicated research scholars outside the Drug & Vaccine Development Laboratory, P410."
+    }
+];
+
+
+function initLab() {
+    // --- Gallery ---
+    const galleryGrid = document.getElementById('lab-gallery-grid');
+    if (galleryGrid) {
+        labPhotos.forEach(photo => {
+            const card = document.createElement('div');
+            card.className = 'lab-photo-card reveal';
+            card.innerHTML = `
+                <img src="${photo.src}" alt="${photo.title}" loading="lazy">
+                <div class="lab-photo-overlay">
+                    <span class="photo-tag"><i class="fa-solid fa-camera"></i> ${photo.tag}</span>
+                    <h4>${photo.title}</h4>
+                    <p>${photo.desc}</p>
+                </div>`;
+            galleryGrid.appendChild(card);
+        });
+    }
+
+
+
+    initScrollReveal();
+    initTilt('.lab-photo-card');
+}
+
+// =============================================
 //  PAGE: CAREER (career.html)
 // =============================================
 
@@ -540,5 +645,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initResearch();
     initNetworkGraph();
     initTeam();
+    initLab();
     initCareer();
 });
